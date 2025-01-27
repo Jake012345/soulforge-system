@@ -11,6 +11,6 @@ public class SoulforgeSystem implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
-
+		// comment
 	}
 }
