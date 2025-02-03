@@ -1,7 +1,7 @@
 package net.systemcstudios.soulforgesystem.abilities;
 
 public class MinerAbility implements LvlInterface{
-    boolean skillUsed = false;
+    public boolean skillUsed = false;
     int xp = xpEarn();
     public int xpEarn() {
         if(skillUsed) {
