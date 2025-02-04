@@ -37,4 +37,9 @@ public class MinerAbility implements LvlInterface{
         }
         else return 0;
     }
+    public void skillGetter() {
+        if(getLvl() >= 0) {
+
+        }
+    }
 }

@@ -11,11 +11,11 @@ import static net.minecraft.text.Text.literal;
 
 public class SoulforgeSytemKeyInputHandler extends MinerAbility {
     public static final String KEY_CATEGORY_SOULFORGE_SYSTEM = "Soulforge System";
-    public static final String KEY_ACTION_ABILITY_1 = "Use Ability 1";
-    public static final String KEY_ACTION_ABILITY_2 = "Use Ability 2";
-    public static final String KEY_ACTION_ABILITY_3 = "Use Ability 3";
-    public static final String KEY_ACTION_ABILITY_4 = "Use Ability 4";
-    public static final String KEY_ACTION_ABILITY_5 = "Use Ability 5";
+    public static final String KEY_ACTION_ABILITY_1 = "key_soulforge_system_ability_1";
+    public static final String KEY_ACTION_ABILITY_2 = "key_soulforge_system_ability_2";
+    public static final String KEY_ACTION_ABILITY_3 = "key_soulforge_system_ability_3";
+    public static final String KEY_ACTION_ABILITY_4 = "key_soulforge_system_ability_4";
+    public static final String KEY_ACTION_ABILITY_5 = "key_soulforge_system_ability_5";
 
     public static KeyBinding abilityAction1;
     public static KeyBinding abilityAction2;
