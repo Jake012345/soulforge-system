@@ -7,13 +7,15 @@ import net.minecraft.client.util.InputUtil;
 import net.systemcstudios.soulforgesystem.abilities.MinerAbility;
 import org.lwjgl.glfw.GLFW;
 
+import static net.minecraft.text.Text.literal;
+
 public class SoulforgeSytemKeyInputHandler extends MinerAbility {
-    public static final String KEY_CATEGORY_SOULFORGE_SYSTEM = "key.category.soulforge_system_soul_forge_system.";
-    public static final String KEY_ACTION_ABILITY_1 = "key.soul_forgesystem.key_action_ability_1";
-    public static final String KEY_ACTION_ABILITY_2 = "key.soul_forgesystem.key_action_ability_2";
-    public static final String KEY_ACTION_ABILITY_3 = "key.soul_forgesystem.key_action_ability_3";
-    public static final String KEY_ACTION_ABILITY_4 = "key.soul_forgesystem.key_action_ability_4";
-    public static final String KEY_ACTION_ABILITY_5 = "key.soul_forgesystem.key_action_ability_5";
+    public static final String KEY_CATEGORY_SOULFORGE_SYSTEM = "Soulforge System";
+    public static final String KEY_ACTION_ABILITY_1 = "Use Ability 1";
+    public static final String KEY_ACTION_ABILITY_2 = "Use Ability 2";
+    public static final String KEY_ACTION_ABILITY_3 = "Use Ability 3";
+    public static final String KEY_ACTION_ABILITY_4 = "Use Ability 4";
+    public static final String KEY_ACTION_ABILITY_5 = "Use Ability 5";
 
     public static KeyBinding abilityAction1;
     public static KeyBinding abilityAction2;
@@ -26,22 +28,27 @@ public class SoulforgeSytemKeyInputHandler extends MinerAbility {
         ClientTickEvents.END_CLIENT_TICK.register(client -> {
             if(abilityAction1.wasPressed()) {
                 this.skillUsed = true;
+                client.player.sendMessage(literal("Key 1 was pressed! xp: " + this.getLvl()), false);
             }
             if(abilityAction2.wasPressed()) {
                 this.skillUsed = true;
+                client.player.sendMessage(literal("Key 2 was pressed!"), false);
             }
             if(abilityAction3.wasPressed()) {
                 this.skillUsed = true;
+                client.player.sendMessage(literal("Key 3 was pressed!"), false);
             }
             if(abilityAction4.wasPressed()) {
                 this.skillUsed = true;
+                client.player.sendMessage(literal("Key 4 was pressed!"), false);
             }
             if(abilityAction5.wasPressed()) {
                 this.skillUsed = true;
+                client.player.sendMessage(literal("Key 5 was pressed!"), false);
             }
         });
     }
-    public static void register() {
+    public void register() {
         abilityAction1 = KeyBindingHelper.registerKeyBinding(new KeyBinding(
                 KEY_ACTION_ABILITY_1,
                 InputUtil.Type.KEYSYM,
@@ -77,5 +84,6 @@ public class SoulforgeSytemKeyInputHandler extends MinerAbility {
                 KEY_CATEGORY_SOULFORGE_SYSTEM
 
         ));
+        registerKeyInputs();
     }
 }
