@@ -2,9 +2,10 @@ package net.systemcstudios.soulforgesystem.event;
 
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
+import net.minecraft.client.network.ClientPlayerEntity;
 import net.minecraft.client.option.KeyBinding;
 import net.minecraft.client.util.InputUtil;
-import net.systemcstudios.soulforgesystem.abilities.MinerAbility;
+import net.minecraft.server.network.ServerPlayerEntity;
 import org.lwjgl.glfw.GLFW;
 
 import static net.minecraft.text.Text.literal;
@@ -24,31 +25,26 @@ public class SoulforgeSytemKeyInputHandler {
     public static KeyBinding abilityAction5;
 
 
-    public void registerKeyInputs() {
+    public static void registerKeyInputs() {
         ClientTickEvents.END_CLIENT_TICK.register(client -> {
             if(abilityAction1.wasPressed()) {
 
-                client.player.sendMessage(literal("Key 1 was pressed! xp: "), false);
             }
             if(abilityAction2.wasPressed()) {
-                //this.skillUsed = true;
-                client.player.sendMessage(literal("Key 2 was pressed!"), false);
+
             }
             if(abilityAction3.wasPressed()) {
-                //this.skillUsed = true;
-                client.player.sendMessage(literal("Key 3 was pressed!"), false);
+
             }
             if(abilityAction4.wasPressed()) {
-                //this.skillUsed = true;
-                client.player.sendMessage(literal("Key 4 was pressed!"), false);
+
             }
             if(abilityAction5.wasPressed()) {
-                //this.skillUsed = true;
-                client.player.sendMessage(literal("Key 5 was pressed!"), false);
+
             }
         });
     }
-    public void register() {
+    public static void register() {
         abilityAction1 = KeyBindingHelper.registerKeyBinding(new KeyBinding(
                 KEY_ACTION_ABILITY_1,
                 InputUtil.Type.KEYSYM,
